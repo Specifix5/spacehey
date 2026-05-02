@@ -1,0 +1,18 @@
+:root {
+  --color-step-1: #8a0000;
+  --color-step-2: #ca0202;
+
+  --color-border: #ca0202;
+  --color-border-secondary: #970e0e;
+
+  --color-background: #fcfbf4;
+  --color-background-secondary: #fff;
+
+
+	--primary-gradient: linear-gradient(to bottom, var(--color-step-1) 0%, var(--color-step-2) 9%, var(--color-step-1) 18%, var(--color-step-1) 92%, #333 100%) center/cover no-repeat;
+  --close-gradient: linear-gradient(180deg, rgba(233,145,126,1) 0%, rgba(223,89,65,1) 29%, rgba(156,32,15,1) 100%);
+
+  --contact-gradient: linear-gradient(180deg, #8a0000, #ac0000 8%, #b60000 40%, #ce0000 88%, #ff0000 93%, #c70000 95%, #aa0000 96%, #c70000);
+  --profile-button-gradient: linear-gradient(180deg,#f33636,#f42d2d 86%,#b41a1a);
+  --profile-button-gradient-hover: linear-gradient(180deg,#b41c1c,#d72424 86%,#b41a1a);
+}
