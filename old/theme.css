@@ -1,0 +1,538 @@
+iframe.hideobj {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+body {
+  background-image: url("https://files.hatsune.lol/uploads/8dbea3d3-8d5f-4450-ba24-abaa4f4982ec.jpg?fn=AmadeusSystems-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body:before {
+  content: " ";
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-image: url("https://files.hatsune.lol/uploads/c5c8bac9-7cfd-40ef-b138-bb2e981f357d.gif?fn=divergence.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  animation: yourAnimation 3s ease 0s 1 normal forwards;
+  pointer-events: none;
+}
+@keyframes yourAnimation {
+  0.0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+nav,
+footer {
+  margin: 1em;
+  position: relative;
+  box-shadow: 5px 8px 10px #0006;
+}
+footer {
+  margin-bottom: 3rem;
+  border: 2px solid var(--color-border-secondary);
+}
+
+nav .top {
+  background-color: var(--color-background-secondary);
+  color: #000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+nav .top .right,
+nav .top .center {
+  padding-top: 1em;
+}
+
+nav .top,
+nav .links {
+  border-left: 2px solid var(--color-border);
+  border-right: 2px solid var(--color-border);
+}
+nav .info {
+  border-left: 2px solid var(--color-border);
+  border-right: 2px solid var(--color-border);
+}
+nav .links {
+  border-bottom: 2px solid var(--color-border);
+  background-color: var(--color-border);
+}
+nav:before {
+  content: "Future Gadget Lab Mem 004 — Profile";
+  display: block;
+  padding: 1em;
+  background: var(--primary-gradient);
+  font-family:
+    "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+    Tahoma, sans-serif;
+  font-size: 1em;
+  text-shadow: 2px 2px 0px #000;
+  border-radius: 10px 10px 0 0;
+}
+nav:after {
+  content: "X";
+  display: inline-block;
+  padding: 0.4em 0.6em;
+  width: fit-content;
+  border-radius: 5px;
+  background: var(--close-gradient);
+  border: 1px solid var(--color-background-secondary);
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+  pointer-events: none;
+}
+main:before {
+  content: url("https://files.hatsune.lol/uploads/5d168822-6fd5-4560-b682-6fe19096e832.png?fn=tuturu.png");
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  transform: translateX(-3vw) translateY(-6vh);
+  pointer-events: none;
+}
+main {
+  background: none;
+  position: relative;
+  font-family:
+    "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+    Tahoma, sans-serif;
+}
+.profile h1 {
+  border: 2px solid var(--color-border-secondary);
+  border-radius: 5px 5px 0 0;
+  padding: 0.5em;
+  color: var(--color-background-secondary);
+  text-shadow: 2px 2px 0 #000;
+  background: var(--primary-gradient);
+  margin-bottom: 0;
+}
+.profile .left {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.profile .general-about {
+  background: var(--color-background-secondary);
+  border-left: 2px solid var(--color-border-secondary);
+  border-right: 2px solid var(--color-border-secondary);
+  border-bottom: 2px solid var(--color-border-secondary);
+  padding: 1em;
+  box-shadow: 5px 8px 10px #0006;
+}
+.general-about .profile-pic {
+  margin: 0 1em 0 0;
+}
+.profile .left .mood {
+  margin-top: 1em;
+  background: var(--color-background-secondary);
+  border-radius: 11px 11px 0 0;
+  box-shadow: 5px 8px 10px #0006;
+  border-left: 2px solid var(--color-border-secondary);
+  border-right: 2px solid var(--color-border-secondary);
+  border-bottom: 2px solid var(--color-border-secondary);
+}
+.profile .left .mood p {
+  margin-left: 1em;
+  margin-top: 1em;
+}
+.profile .left .mood:before {
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  content: "😸 Mood";
+  display: block;
+  padding: 0.5em;
+  border: 2px solid var(--color-border-secondary);
+  background: var(--primary-gradient);
+  font-family:
+    "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+    Tahoma, sans-serif;
+  font-size: 1em;
+  text-shadow: 2px 2px 0px #000;
+  border-radius: 10px 10px 0 0;
+  color: var(--color-background-secondary);
+}
+nav:after {
+  content: "X";
+  display: inline-block;
+  padding: 0.4em 0.6em;
+  width: fit-content;
+  border-radius: 5px;
+  background: var(--close-gradient);
+  border: 1px solid var(--color-background-secondary);
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+}
+.left .contact {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+.left .contact {
+  border: 0;
+  background: var(--contact-gradient);
+}
+.profile .contact .heading {
+  background: radial-gradient(circle, #5eac56 0%, #3c873c 100%) center/cover
+    no-repeat;
+  display: flex;
+  border-radius: 0 40px 50px 0;
+  align-items: center;
+  filter: drop-shadow(0px 0px 7px #000);
+  -webkit-filter: drop-shadow(0px 0px 7px #000);
+  box-shadow:
+    -2px -2px 10px rgba(0, 0, 0, 0.25) inset,
+    2px 2px 10px rgba(0, 0, 0, 0.5) inset;
+  margin-right: 0.5em;
+}
+.profile .contact .heading h4 {
+  font-size: 0;
+}
+.profile .contact .heading h4:after {
+  content: "💬 start";
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 2px 2px 5px #0007;
+  padding-right: 1.2rem;
+  white-space: nowrap;
+}
+.profile .contact .inner {
+  overflow-y: scroll;
+}
+.profile .contact .inner,
+.profile .contact .inner .f-row,
+.profile .contact .inner .f-row .f-col {
+  display: flex;
+  margin: 0;
+  align-items: center;
+}
+.profile .f-col a {
+  white-space: nowrap;
+  border: 1px solid var(--color-border);
+  background: var(--profile-button-gradient);
+  border-radius: 3px;
+  padding: 0.5em;
+  margin-left: 0.3em;
+  font-weight: normal;
+  color: var(--color-background-secondary);
+}
+.profile .f-col a:hover {
+  background: var(--profile-button-gradient-hover);
+  text-decoration: none;
+}
+.profile .url-info,
+.profile .profile-info {
+  background-color: var(--color-background);
+  border: 0;
+  box-shadow:
+    2px 2px 0px var(--color-background-secondary) inset,
+    -2px -2px 0px #5d5c51 inset,
+    5px 8px 10px #0006;
+  padding: 10px;
+}
+
+.profile .url-info p:first-child::after {
+  content: "";
+  display: block;
+
+  width: 364px;
+  height: 134px;
+
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+
+  background-image: url("https://files.hatsune.lol/uploads/783e8632-d870-4ffd-933a-d9a5c5316303.jpg?fn=1.408596.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.profile .url-info p {
+  text-align: center;
+}
+.left .table-section {
+  border-radius: 10px 10px 0 0;
+  border: 2px solid var(--color-border-secondary);
+  box-shadow: 5px 8px 10px #0006;
+}
+.left .table-section > .details-table > tr {
+  display: flex;
+  flex-direction: column;
+}
+.left .table-section .heading {
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 1em;
+  background: var(--primary-gradient);
+  font-family:
+    "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+    Tahoma, sans-serif;
+  font-size: 1em;
+  text-shadow: 2px 2px 0px #000;
+  border-radius: 10px 10px 0 0;
+  color: var(--color-background-secondary);
+}
+.left .table-section .inner,
+.left .table-section .inner .details-table tbody tr {
+  background: var(--color-background-secondary);
+}
+
+.left .table-section .inner .details-table {
+  border-collapse: separate;
+  border-spacing: 0 10px; /* vertical gap between rows */
+}
+
+.left .table-section .inner .details-table td {
+  border-top: 1px dashed var(--color-border-secondary);
+  border-bottom: 1px dashed var(--color-border-secondary);
+}
+
+.left .table-section .inner .details-table td:first-child {
+  border-left: 1px dashed var(--color-border-secondary);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.left .table-section .inner .details-table td:last-child {
+  border-right: 1px dashed var(--color-border-secondary);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.left .table-section .inner .details-table {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.left .table-section .inner .details-table td {
+  padding: 0.45rem;
+}
+
+.left .table-section .inner .details-table td:first-child {
+  background: var(--color-border);
+  color: #fff;
+}
+
+.left .table-section .inner .details-table td:first-child a {
+  color: #fff;
+}
+
+.left .table-section .inner .details-table td:last-child {
+  background: var(--color-background);
+}
+
+/* replace texts */
+.left
+  .table-section:nth-of-type(5)
+  .inner
+  .details-table
+  tbody
+  tr:nth-child(1)
+  td:first-child
+  p {
+  visibility: hidden;
+  position: relative;
+}
+
+.left
+  .table-section:nth-of-type(5)
+  .inner
+  .details-table
+  tbody
+  tr:nth-child(1)
+  td:first-child
+  p::after {
+  content: "G3n3r4l";
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.profile .right .blog-preview {
+  margin-top: 1em;
+  background: var(--color-background-secondary);
+  border-radius: 11px 11px 0 0;
+  box-shadow: 5px 8px 10px #0006;
+  border-left: 3px solid var(--color-border-secondary);
+  border-right: 2px solid var(--color-border-secondary);
+  border-bottom: 2px solid var(--color-border-secondary);
+}
+.profile .right .blog-preview p,
+.profile .right .blog-preview h4 {
+  font-family:
+    "Lucida Console", "Lucida Sans Typewriter", monaco,
+    "Bitstream Vera Sans Mono", monospace;
+  margin-left: 1em;
+  margin-top: 1em;
+}
+.profile .right .blog-preview:before {
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  content: "🗒️ Notepad";
+  display: block;
+  padding: 0.5em;
+  border: 2px solid var(--color-border-secondary);
+  background: var(--primary-gradient);
+  font-family:
+    "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+    Tahoma, sans-serif;
+  font-size: 1em;
+  text-shadow: 2px 2px 0px #000;
+  border-radius: 10px 10px 0 0;
+  color: var(--color-background-secondary);
+}
+.profile .right .blurbs,
+.profile .right .friends {
+  margin-top: 1em;
+  background: var(--color-background-secondary);
+  border-radius: 11px 11px 0 0;
+  box-shadow: 5px 8px 10px #0006;
+  border-left: 3px solid var(--color-border-secondary);
+  border-right: 2px solid var(--color-border-secondary);
+  border-bottom: 2px solid var(--color-border-secondary);
+}
+.profile .right .blurbs .heading,
+.profile .right .friends .heading {
+  -moz-background-attachment-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  display: block;
+  padding: 0.7em;
+  border: 2px solid var(--color-border-secondary);
+  background: var(--primary-gradient);
+  font-family:
+    "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+    Tahoma, sans-serif;
+  font-size: 1em;
+  text-shadow: 2px 2px 0px #000;
+  border-radius: 10px 10px 0 0;
+  color: var(--color-background-secondary);
+}
+.profile .right .blurbs .heading h4:before {
+  content: "🍀 ";
+}
+.profile .right .comments-table {
+  height: 300px;
+  overflow-y: scroll;
+  display: block;
+  background-color: var(--color-background);
+}
+.comments-table td {
+  background: var(--color-background-secondary);
+}
+.profile .right .comments-table td:first-child {
+  background: var(--color-background-secondary);
+  border-right: 1px solid var(--color-background);
+  border-bottom: 1px solid var(--color-background);
+}
+.comment-replies {
+  border: 0;
+  border-left: 5px solid #ffbd2e;
+}
+
+.edit-link {
+  background-color: var(--color-background-secondary);
+  margin: 0;
+}
+
+.profile .left .edit-link {
+  border-left: 2px solid var(--color-border-secondary);
+  border-right: 2px solid var(--color-border-secondary);
+  padding-left: 5px;
+}
+
+.edit-link.right-side {
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 3px 5px 4px 5px;
+}
+
+a.more {
+  color: var(--color-background-secondary);
+}
+
+tr:has(img.icon[src*="custom_web.png"]) td:last-child a {
+  text-indent: -9999px;
+  overflow: hidden;
+  font-size: 0;
+  color: transparent;
+
+  display: inline-block;
+  width: 88px;
+  height: 31px;
+  background: url("https://specifix.dev/images/88x31.png") center / contain
+    no-repeat;
+}
+
+/*nav .top .left a[href*="https://spacehey.com"]:has(img.logo[src*="logo_optimized.svg"]) {
+  display: inline-block;
+  width: 200px;
+  height: 85px;
+  background-image: url("https://miku.hatsune.lol/spacehey/FutureGadgetLabs-banner.png?v=3");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}*/
+
+nav
+  .top
+  .left
+  a[href*="https://spacehey.com"]:has(img.logo[src*="logo_optimized.svg"])
+  img.logo {
+  /*opacity: 0;*/
+  filter: invert(1);
+}
+
+.section > h4 {
+  padding-bottom: 0.35rem;
+  border-bottom: 2px dashed var(--color-border-secondary);
+  color: var(--dark-orange);
+  font-size: 1.2em;
+}
+
+hr {
+  border: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.3rem;
+}
+
+.highlight {
+  color: var(--dark-orange);
+  font-weight: bold;
+}
+
+.rounded {
+  border-radius: 8px;
+}

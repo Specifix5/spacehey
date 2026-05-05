@@ -1,0 +1,53 @@
+:root {
+  --color-step-1: #1a1a1a;
+  --color-step-2: #2a2a2a;
+
+  --color-border: #2f2f2f;
+  --color-border-secondary: #232323;
+
+  --color-background: #0e0e0e;
+  --color-background-secondary: #141414;
+
+  --primary-gradient: linear-gradient(
+      to bottom,
+      var(--color-step-1) 0%,
+      var(--color-step-2) 9%,
+      var(--color-step-1) 18%,
+      var(--color-step-1) 92%,
+      #000000 100%
+    )
+    center / cover no-repeat;
+
+  --contact-gradient: linear-gradient(
+    180deg,
+    #1a1a1a,
+    #202020 8%,
+    #262626 40%,
+    #303030 88%,
+    #3a3a3a 93%,
+    #2c2c2c 95%,
+    #252525 96%,
+    #2c2c2c
+  );
+
+  --close-gradient: linear-gradient(
+    180deg,
+    rgba(233, 145, 126, 1) 0%,
+    rgba(223, 89, 65, 1) 29%,
+    rgba(156, 32, 15, 1) 100%
+  );
+
+  --profile-button-gradient: linear-gradient(
+    180deg,
+    #2e2e2e,
+    #242424 86%,
+    #121212
+  );
+
+  --profile-button-gradient-hover: linear-gradient(
+    180deg,
+    #1c1c1c,
+    #343434 86%,
+    #121212
+  );
+}

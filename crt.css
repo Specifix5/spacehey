@@ -1,3 +1,7 @@
+:root {
+  --delay-start: 4s;
+}
+
 .crt-wrap {
   width: 100%;
   box-sizing: border-box;
@@ -17,7 +21,7 @@
     ),
     #080402;
   color: #ff9b2f;
-  font-family: "Courier New", monospace;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
   font-size: 14px;
   line-height: 1.55;
   overflow: hidden;
@@ -30,7 +34,7 @@
   animation: crtBoot 1.2s ease-out both;
 }
 
-.crt-box:before {
+.crt-box::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -46,7 +50,7 @@
   animation: scanMove 0.45s linear infinite;
 }
 
-.crt-box:after {
+.crt-box::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -60,15 +64,28 @@
   position: relative;
   z-index: 1;
   animation: textWarmup 2.8s ease-out both;
+  text-transform: none;
+}
+
+/* idle cursor before typing */
+.idle-cursor {
+  display: block;
+  animation:
+    idleBlink 0.8s step-end infinite,
+    idleHide 0s forwards calc(var(--delay-start) + 1.2s);
 }
 
 .line {
+  --speed: 0.055s; /* seconds per character */
+  --pause: 0.2s;
+
   display: block;
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
   width: 0;
-  animation-fill-mode: forwards;
+  overflow: hidden;
+  white-space: nowrap;
+
+  animation: typing calc(var(--chars) * var(--speed)) steps(var(--chars))
+    forwards calc(var(--delay-start) + var(--start));
 }
 
 .blank {
@@ -76,92 +93,212 @@
   height: 1.55em;
 }
 
-/* typing timings */
 .l1 {
-  animation: t1 1.4s steps(32) forwards 1.2s;
+  --chars: 32;
+  --start: 1.2s;
 }
+
 .l2 {
-  animation: t2 1.3s steps(29) forwards 2.8s;
+  --chars: 29;
+  --start: calc(1.2s + (32 * 0.055s) + 0.2s);
 }
+
 .l4 {
-  animation: t4 1s steps(20) forwards 4.4s;
+  --chars: 20;
+  --start: calc(1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s);
 }
+
 .l5 {
-  animation: t5 0.9s steps(19) forwards 5.6s;
+  --chars: 19;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s
+  );
 }
+
 .l6 {
-  animation: t6 1.6s steps(37) forwards 6.8s;
+  --chars: 37;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s
+  );
 }
+
 .l8 {
-  animation: t8 1.4s steps(32) forwards 8.8s;
+  --chars: 32;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s
+  );
 }
+
 .l9 {
-  animation: t9 1.6s steps(37) forwards 10.5s;
+  --chars: 37;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s + (32 * 0.055s) + 0.2s
+  );
 }
+
 .l11 {
-  animation: t11 1.4s steps(29) forwards 12.4s;
+  --chars: 29;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s + (32 * 0.055s) + 0.2s +
+      (37 * 0.055s) + 0.2s
+  );
 }
+
 .l12 {
-  animation: t12 0.5s steps(8) forwards 14s;
+  --chars: 8;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s + (32 * 0.055s) + 0.2s +
+      (37 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s
+  );
 }
 
-.prompt {
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: prompttype 0.3s steps(1) forwards 14.9s;
+.l13 {
+  --chars: 29;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s + (32 * 0.055s) + 0.2s +
+      (37 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (8 * 0.055s) + 0.2s
+  );
 }
 
-/* keyframes */
-@keyframes t1 {
+.l14 {
+  --chars: 26;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s + (32 * 0.055s) + 0.2s +
+      (37 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (8 * 0.055s) + 0.2s +
+      (29 * 0.055s) + 0.2s
+  );
+}
+
+.l15 {
+  --chars: 45;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s + (32 * 0.055s) + 0.2s +
+      (37 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (8 * 0.055s) + 0.2s +
+      (29 * 0.055s) + 0.2s + (26 * 0.055s) + 0.2s
+  );
+}
+
+.l16 {
+  --chars: 46;
+  --start: calc(var(--start) + (45 * 0.055s) + 0.2s);
+}
+
+.l17 {
+  --chars: 44;
+  --start: calc(var(--start) + (46 * 0.055s) + 0.2s);
+}
+
+.l18 {
+  --chars: 47;
+  --start: calc(var(--start) + (44 * 0.055s) + 0.2s);
+}
+
+.l19 {
+  --chars: 18;
+  --start: calc(var(--start) + (47 * 0.055s) + 0.2s);
+}
+
+.l15 {
+  --chars: 45;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s + (32 * 0.055s) + 0.2s +
+      (37 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (8 * 0.055s) + 0.2s +
+      (29 * 0.055s) + 0.2s + (26 * 0.055s) + 0.2s
+  );
+}
+
+.l16 {
+  --chars: 46;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s + (32 * 0.055s) + 0.2s +
+      (37 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (8 * 0.055s) + 0.2s +
+      (29 * 0.055s) + 0.2s + (26 * 0.055s) + 0.2s + (45 * 0.055s) + 0.2s
+  );
+}
+
+.l17 {
+  --chars: 44;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s + (32 * 0.055s) + 0.2s +
+      (37 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (8 * 0.055s) + 0.2s +
+      (29 * 0.055s) + 0.2s + (26 * 0.055s) + 0.2s + (45 * 0.055s) + 0.2s +
+      (46 * 0.055s) + 0.2s
+  );
+}
+
+.l18 {
+  --chars: 47;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s + (32 * 0.055s) + 0.2s +
+      (37 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (8 * 0.055s) + 0.2s +
+      (29 * 0.055s) + 0.2s + (26 * 0.055s) + 0.2s + (45 * 0.055s) + 0.2s +
+      (46 * 0.055s) + 0.2s + (44 * 0.055s) + 0.2s
+  );
+}
+
+.l19 {
+  --chars: 18;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s + (32 * 0.055s) + 0.2s +
+      (37 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (8 * 0.055s) + 0.2s +
+      (29 * 0.055s) + 0.2s + (26 * 0.055s) + 0.2s + (45 * 0.055s) + 0.2s +
+      (46 * 0.055s) + 0.2s + (44 * 0.055s) + 0.2s + (47 * 0.055s) + 0.2s
+  );
+}
+
+.l20 {
+  --chars: 1;
+  --start: calc(
+    1.2s + (32 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (20 * 0.055s) + 0.2s +
+      (19 * 0.055s) + 0.2s + (37 * 0.055s) + 0.2s + (32 * 0.055s) + 0.2s +
+      (37 * 0.055s) + 0.2s + (29 * 0.055s) + 0.2s + (8 * 0.055s) + 0.2s +
+      (29 * 0.055s) + 0.2s + (26 * 0.055s) + 0.2s + (45 * 0.055s) + 0.2s +
+      (46 * 0.055s) + 0.2s + (44 * 0.055s) + 0.2s + (47 * 0.055s) + 0.2s +
+      (18 * 0.055s) + 0.2s
+  );
+}
+
+@keyframes typing {
   to {
-    width: 32ch;
+    width: calc(var(--chars) * 1ch);
   }
 }
-@keyframes t2 {
-  to {
-    width: 29ch;
-  }
-}
-@keyframes t4 {
-  to {
-    width: 20ch;
-  }
-}
-@keyframes t5 {
-  to {
-    width: 19ch;
-  }
-}
-@keyframes t6 {
-  to {
-    width: 37ch;
-  }
-}
-@keyframes t8 {
-  to {
-    width: 32ch;
-  }
-}
-@keyframes t9 {
-  to {
-    width: 37ch;
-  }
-}
-@keyframes t11 {
-  to {
-    width: 29ch;
-  }
-}
-@keyframes t12 {
-  to {
-    width: 8ch;
-  }
-}
+
 @keyframes prompttype {
   to {
     width: 1ch;
+  }
+}
+
+@keyframes idleBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes idleHide {
+  to {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
   }
 }
 

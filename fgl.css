@@ -1,18 +1,86 @@
 :root {
-  --color-step-1: #8a0000;
-  --color-step-2: #ca0202;
+  /* images */
+  --img-body-bg: url("https://files.hatsune.lol/uploads/8dbea3d3-8d5f-4450-ba24-abaa4f4982ec.jpg?fn=AmadeusSystems-background.jpg");
+  --img-nav-bg: url("https://files.hatsune.lol/uploads/81107204-2a49-4b50-8931-0f44d91b3ed0.jpg?fn=mess.jpg");
+  --img-main-bg: url("https://files.hatsune.lol/uploads/b2118b7a-df7c-4dbd-8aac-49cfd643e047.jpg");
+  --img-profile-info-bg: url("https://files.hatsune.lol/uploads/d1cd2cb6-9244-4dee-8c96-135b1c86c1fd.jpg?fn=makise.jpg");
 
-  --color-border: #ca0202;
-  --color-border-secondary: #970e0e;
+  /* colors */
+  --color-white: #fff;
+  --color-black: #000;
 
-  --color-background: #fcfbf4;
-  --color-background-secondary: #fff;
+  /* base text */
+  --color-text: #ffe3c1;
+  --color-text-dark: #1a0e05;
 
+  /* links */
+  --color-link: #ffb347;
+  --color-link-hover: #ff8c1a;
 
-	--primary-gradient: linear-gradient(to bottom, var(--color-step-1) 0%, var(--color-step-2) 9%, var(--color-step-1) 18%, var(--color-step-1) 92%, #333 100%) center/cover no-repeat;
-  --close-gradient: linear-gradient(180deg, rgba(233,145,126,1) 0%, rgba(223,89,65,1) 29%, rgba(156,32,15,1) 100%);
+  /* primary accent (nixie glow) */
+  --color-accent: #ffb347;
+  --color-accent-strong: #ff8c1a;
+  --color-accent-heading: #ffc266;
+  --color-accent-cell: #221209;
 
-  --contact-gradient: linear-gradient(180deg, #8a0000, #ac0000 8%, #b60000 40%, #ce0000 88%, #ff0000 93%, #c70000 95%, #aa0000 96%, #c70000);
-  --profile-button-gradient: linear-gradient(180deg,#f33636,#f42d2d 86%,#b41a1a);
-  --profile-button-gradient-hover: linear-gradient(180deg,#b41c1c,#d72424 86%,#b41a1a);
+  /* status */
+  --color-online: #ff9a2f;
+
+  /* table / UI depth */
+  --color-cell-highlight: #ff8c1a;
+  --color-cell-highlight-inset-light: #ffb366;
+  --color-cell-highlight-inset-dark: #5a2a00;
+
+  --color-cell-inset-light: #5f3000;
+  --color-cell-inset-dark: #130903;
+
+  /* overlays */
+  --color-scanline: rgb(255 120 0 / 30%);
+  --color-transparent: rgb(0 0 0 / 0%);
+
+  /* borders */
+  --border-light: 1px solid #ff8c1a;
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+
+  /* glow shadows (key part of nixie look) */
+  --shadow-white-sm: 0 0 6px #ff8c1a;
+  --shadow-white-md: 0 0 10px #ff8c1a;
+  --shadow-white-lg: 0 0 18px #ff8c1a;
+
+  /* text glow */
+  --shadow-text-main: 0 0 4px rgba(255, 140, 26, 0.6);
+  --shadow-title: 0 0 8px #ff8c1a, 0 0 16px #ff5e00;
+
+  /* link glow */
+  --shadow-link: 0 0 3px #ff8c1a;
+
+  --shadow-cell-highlight:
+    0 0 10px var(--color-cell-highlight),
+    inset 2px 2px var(--color-cell-highlight-inset-light),
+    inset -2px -2px var(--color-cell-highlight-inset-dark);
+
+  --shadow-cell:
+    0 0 10px var(--color-accent-cell),
+    inset 2px 2px var(--color-cell-inset-light),
+    inset -2px -2px var(--color-cell-inset-dark);
+
+  --shadow-scrollbar: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+  /* filters */
+  --filter-logo: drop-shadow(2px 4px 6px var(--color-black));
+  --filter-icons: brightness(10);
+  --filter-profile-info: contrast(0.7) brightness(1.3);
+  --filter-online: hue-rotate(61deg) brightness(2) contrast(0.5);
+
+  /* sizing */
+  --nav-logo-width: 165px;
+  --nav-logo-height: 42px;
+  --icon-size: 1.4em;
+  --scrollbar-width: 12px;
+
+  /* animation */
+  --float-duration: 8s;
+  --float-distance: 3px;
 }
