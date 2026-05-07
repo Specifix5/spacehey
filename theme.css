@@ -56,6 +56,22 @@ nav .top {
   border: var(--border-light);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-white-md);
+  overflow: hidden;
+}
+
+nav .top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.25) 70%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+
+  pointer-events: none;
 }
 
 nav .top .left .logo {
@@ -115,7 +131,7 @@ nav
   display: inline-block;
   width: 200px;
   height: 85px;
-  background-image: url("https://miku.hatsune.lol/spacehey/FutureGadgetLabs-banner.png?v=3");
+  background-image: url("https://miku.hatsune.lol/spacehey/images/FutureGadgetLabs-banner-highlight.png?v=5");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
